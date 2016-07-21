@@ -1,0 +1,45 @@
+import java.util.Scanner;
+public class Clock1
+{
+ 
+ public static void main(String []args)
+ {
+  int hh=0;
+  int mm=0;
+  try{
+  String time= args[0];
+  String hrs[] = time.split(":");
+
+hh = Integer.parseInt(hrs[0]);
+mm = Integer.parseInt(hrs[1]);
+
+
+      double hangle,minangle,angle;
+        hangle=hh*30+(mm*30)/60;
+        minangle=mm*6;
+        angle=(hangle-minangle);
+        if(angle==360)
+        {
+            System.out.println("angle is zero degree");
+        }
+        else if(angle<0)
+        {
+            angle=-(angle);
+             System.out.println("angle is:" +angle);
+        }
+        else if(angle>180)
+        {
+            angle=angle-180;
+             System.out.println("angle is:" +angle);
+        }
+        else
+        {
+         System.out.println("angle is:" +angle);   
+        }
+  }
+  catch(ArithmeticException e){System.out.println(e);}
+  catch (NumberFormatException e) {System.out.println(e);}
+  catch (ArrayIndexOutOfBoundsException e){System.out.println(e);}   
+
+  }
+}
